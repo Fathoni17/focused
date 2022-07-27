@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct TaskModel: Hashable, Identifiable {
+    var id: String
+    var title: String
+    var elapsedTime: UInt?
+    var pomodoroCount: UInt?
+    var isDone: Bool?
+}

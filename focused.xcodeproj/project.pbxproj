@@ -24,6 +24,7 @@
 		3261F7732891F438005B7754 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7722891F438005B7754 /* TaskModel.swift */; };
 		3261F7742891F4E6005B7754 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7722891F438005B7754 /* TaskModel.swift */; };
 		3261F7762891F525005B7754 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7752891F525005B7754 /* TaskViewModel.swift */; };
+		3261F7772891F945005B7754 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7752891F525005B7754 /* TaskViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -263,6 +264,7 @@
 				3261F7712891EF15005B7754 /* TodayScreenView.swift in Sources */,
 				325598E62887C9A100089BE9 /* focusedApp.swift in Sources */,
 				3261F74028918766005B7754 /* SideBarView.swift in Sources */,
+				3261F7772891F945005B7754 /* TaskViewModel.swift in Sources */,
 				325598E82887C9A100089BE9 /* ContentView.swift in Sources */,
 				3261F7742891F4E6005B7754 /* TaskModel.swift in Sources */,
 			);

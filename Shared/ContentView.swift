@@ -13,17 +13,17 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            #if os(iOS)
+        #if os(iOS)
             TabBarView()
-            #endif
-            #if os(macOS)
+        #endif
+        #if os(macOS)
             SideBarView()
-                .navigationTitle("Focused Apps")
-            #endif
-            #if os(watchOS)
+        #endif
+        #if os(watchOS)
             Text("Watch")
-            #endif
+        #endif
         }
+            .navigationTitle("Focused Apps")
     }
 }
 
