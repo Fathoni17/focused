@@ -12,7 +12,7 @@ struct TodayScreenView: View {
     
     var body: some View {
         VStack {
-            // TODO: Create Greeting component
+            GreetingsView()
             
             List {
                 Section {

@@ -25,6 +25,8 @@
 		3261F7742891F4E6005B7754 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7722891F438005B7754 /* TaskModel.swift */; };
 		3261F7762891F525005B7754 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7752891F525005B7754 /* TaskViewModel.swift */; };
 		3261F7772891F945005B7754 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7752891F525005B7754 /* TaskViewModel.swift */; };
+		3261F7792891FE4B005B7754 /* GreetingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7782891FE4B005B7754 /* GreetingsView.swift */; };
+		3261F77A2891FE4B005B7754 /* GreetingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7782891FE4B005B7754 /* GreetingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,7 @@
 		3261F76F2891EEEC005B7754 /* TodayScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayScreenView.swift; sourceTree = "<group>"; };
 		3261F7722891F438005B7754 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		3261F7752891F525005B7754 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		3261F7782891FE4B005B7754 /* GreetingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,7 @@
 			children = (
 				32487B7828910D8B001C479D /* TabBarView.swift */,
 				3261F73E28918684005B7754 /* SideBarView.swift */,
+				3261F7782891FE4B005B7754 /* GreetingsView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -249,6 +253,7 @@
 				3261F7702891EEEC005B7754 /* TodayScreenView.swift in Sources */,
 				325598E52887C9A100089BE9 /* focusedApp.swift in Sources */,
 				325598E72887C9A100089BE9 /* ContentView.swift in Sources */,
+				3261F7792891FE4B005B7754 /* GreetingsView.swift in Sources */,
 				3261F7762891F525005B7754 /* TaskViewModel.swift in Sources */,
 				32487B7928910D8B001C479D /* TabBarView.swift in Sources */,
 				3261F7732891F438005B7754 /* TaskModel.swift in Sources */,
@@ -264,6 +269,7 @@
 				3261F7712891EF15005B7754 /* TodayScreenView.swift in Sources */,
 				325598E62887C9A100089BE9 /* focusedApp.swift in Sources */,
 				3261F74028918766005B7754 /* SideBarView.swift in Sources */,
+				3261F77A2891FE4B005B7754 /* GreetingsView.swift in Sources */,
 				3261F7772891F945005B7754 /* TaskViewModel.swift in Sources */,
 				325598E82887C9A100089BE9 /* ContentView.swift in Sources */,
 				3261F7742891F4E6005B7754 /* TaskModel.swift in Sources */,
