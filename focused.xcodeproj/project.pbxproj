@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32487B7928910D8B001C479D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32487B7828910D8B001C479D /* TabBarView.swift */; };
 		325598E32887C9A100089BE9 /* focused.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 325598D02887C9A000089BE9 /* focused.xcdatamodeld */; };
 		325598E42887C9A100089BE9 /* focused.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 325598D02887C9A000089BE9 /* focused.xcdatamodeld */; };
 		325598E52887C9A100089BE9 /* focusedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325598D22887C9A000089BE9 /* focusedApp.swift */; };
@@ -17,9 +18,16 @@
 		325598EA2887C9A100089BE9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325598D42887C9A000089BE9 /* Persistence.swift */; };
 		325598EB2887C9A100089BE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325598D52887C9A100089BE9 /* Assets.xcassets */; };
 		325598EC2887C9A100089BE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325598D52887C9A100089BE9 /* Assets.xcassets */; };
+		3261F74028918766005B7754 /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F73E28918684005B7754 /* SideBarView.swift */; };
+		3261F7702891EEEC005B7754 /* TodayScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F76F2891EEEC005B7754 /* TodayScreenView.swift */; };
+		3261F7712891EF15005B7754 /* TodayScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F76F2891EEEC005B7754 /* TodayScreenView.swift */; };
+		3261F7732891F438005B7754 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7722891F438005B7754 /* TaskModel.swift */; };
+		3261F7742891F4E6005B7754 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7722891F438005B7754 /* TaskModel.swift */; };
+		3261F7762891F525005B7754 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7752891F525005B7754 /* TaskViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32487B7828910D8B001C479D /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		325598D12887C9A000089BE9 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		325598D22887C9A000089BE9 /* focusedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = focusedApp.swift; sourceTree = "<group>"; };
 		325598D32887C9A000089BE9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -28,6 +36,11 @@
 		325598DA2887C9A100089BE9 /* focused.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = focused.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		325598E02887C9A100089BE9 /* focused.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = focused.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		325598E22887C9A100089BE9 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		325598F52887CA4900089BE9 /* focused (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "focused (iOS).entitlements"; sourceTree = "<group>"; };
+		3261F73E28918684005B7754 /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
+		3261F76F2891EEEC005B7754 /* TodayScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayScreenView.swift; sourceTree = "<group>"; };
+		3261F7722891F438005B7754 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		3261F7752891F525005B7754 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,9 +61,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32487B7628910BC7001C479D /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				32487B7828910D8B001C479D /* TabBarView.swift */,
+				3261F73E28918684005B7754 /* SideBarView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		32487B7728910BD6001C479D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3261F7752891F525005B7754 /* TaskViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		325598CA2887C9A000089BE9 = {
 			isa = PBXGroup;
 			children = (
+				325598F52887CA4900089BE9 /* focused (iOS).entitlements */,
 				325598CF2887C9A000089BE9 /* Shared */,
 				325598E12887C9A100089BE9 /* macOS */,
 				325598DB2887C9A100089BE9 /* Products */,
@@ -60,6 +91,9 @@
 		325598CF2887C9A000089BE9 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				3261F76D2891EEBA005B7754 /* View */,
+				3261F76C2891EEA7005B7754 /* Model */,
+				32487B7728910BD6001C479D /* ViewModel */,
 				325598D22887C9A000089BE9 /* focusedApp.swift */,
 				325598D32887C9A000089BE9 /* ContentView.swift */,
 				325598D42887C9A000089BE9 /* Persistence.swift */,
@@ -84,6 +118,31 @@
 				325598E22887C9A100089BE9 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		3261F76C2891EEA7005B7754 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3261F7722891F438005B7754 /* TaskModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3261F76D2891EEBA005B7754 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3261F76E2891EEC9005B7754 /* Screen */,
+				32487B7628910BC7001C479D /* Component */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3261F76E2891EEC9005B7754 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				3261F76F2891EEEC005B7754 /* TodayScreenView.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,8 +245,12 @@
 			files = (
 				325598E32887C9A100089BE9 /* focused.xcdatamodeld in Sources */,
 				325598E92887C9A100089BE9 /* Persistence.swift in Sources */,
+				3261F7702891EEEC005B7754 /* TodayScreenView.swift in Sources */,
 				325598E52887C9A100089BE9 /* focusedApp.swift in Sources */,
 				325598E72887C9A100089BE9 /* ContentView.swift in Sources */,
+				3261F7762891F525005B7754 /* TaskViewModel.swift in Sources */,
+				32487B7928910D8B001C479D /* TabBarView.swift in Sources */,
+				3261F7732891F438005B7754 /* TaskModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +260,11 @@
 			files = (
 				325598E42887C9A100089BE9 /* focused.xcdatamodeld in Sources */,
 				325598EA2887C9A100089BE9 /* Persistence.swift in Sources */,
+				3261F7712891EF15005B7754 /* TodayScreenView.swift in Sources */,
 				325598E62887C9A100089BE9 /* focusedApp.swift in Sources */,
+				3261F74028918766005B7754 /* SideBarView.swift in Sources */,
 				325598E82887C9A100089BE9 /* ContentView.swift in Sources */,
+				3261F7742891F4E6005B7754 /* TaskModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "focused (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QX95ZBX89A;
@@ -327,6 +394,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
@@ -349,6 +417,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "focused (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QX95ZBX89A;
@@ -357,6 +426,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
