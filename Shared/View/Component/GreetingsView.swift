@@ -50,6 +50,11 @@ struct GreetingsView: View {
             Text(name)
                 .font(.largeTitle)
                 .fontWeight(.semibold)
+            #if os(iOS)
+                .lineLimit(1)
+            #elseif os(macOS)
+                .lineLimit(2)
+            #endif
         }
     }
     
@@ -57,6 +62,7 @@ struct GreetingsView: View {
         HStack {
             Text("\(level, specifier: "%.1f")h")
                 .font(.title2)
+                .lineLimit(1)
             Text("🔥")
                 .font(.custom("FireIcon", fixedSize: 32))
         }

@@ -10,7 +10,6 @@ import SwiftUI
 struct TodayScreenView: View {
     @ObservedObject var taskVM: TaskViewModel
     @State var isAddSheetOpen: Bool = false
-    @State var newTaskTitle: String = ""
     
     var body: some View {
         VStack(spacing: 0) {
@@ -25,15 +24,28 @@ struct TodayScreenView: View {
                 } header: {
                     HStack {
                         Text("Today's Tasks")
+                        
                         Spacer()
+                        
                         //EditButton() // TODO: will implemented letter
                         Button {
-                            newTaskTitle = ""
                             isAddSheetOpen = true
                         } label: {
                             Image(systemName: "plus")
                         }
+                        
                         .padding(.all, 4)
+                        // MARK: - Popover and sheet for inputing new task
+                        #if os(macOS)
+                        .popover(isPresented: $isAddSheetOpen, content: {
+                            NewTaskSheetView(showModal: $isAddSheetOpen)
+                        })
+                        #elseif os(iOS)
+                        .sheet(isPresented: $isAddSheetOpen, content: {
+                            NewTaskSheetView(showModal: $isAddSheetOpen)
+                        })
+                        #endif
+                        // MARK: END-
                     }
                 }
             }

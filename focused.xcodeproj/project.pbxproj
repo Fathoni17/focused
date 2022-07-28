@@ -32,6 +32,8 @@
 		3261F7AA28922BAB005B7754 /* HistoryScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7A828922BAB005B7754 /* HistoryScreenView.swift */; };
 		3261F7AC28923B22005B7754 /* TaskListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7AB28923B22005B7754 /* TaskListItems.swift */; };
 		3261F7AD28923B22005B7754 /* TaskListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7AB28923B22005B7754 /* TaskListItems.swift */; };
+		3261F7AF28924BED005B7754 /* NewTaskSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7AE28924BED005B7754 /* NewTaskSheetView.swift */; };
+		3261F7B028924BED005B7754 /* NewTaskSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7AE28924BED005B7754 /* NewTaskSheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,7 @@
 		3261F77B28920649005B7754 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		3261F7A828922BAB005B7754 /* HistoryScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreenView.swift; sourceTree = "<group>"; };
 		3261F7AB28923B22005B7754 /* TaskListItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListItems.swift; sourceTree = "<group>"; };
+		3261F7AE28924BED005B7754 /* NewTaskSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskSheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,7 @@
 			children = (
 				3261F76F2891EEEC005B7754 /* TodayScreenView.swift */,
 				3261F7A828922BAB005B7754 /* HistoryScreenView.swift */,
+				3261F7AE28924BED005B7754 /* NewTaskSheetView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -268,6 +272,7 @@
 				3261F7762891F525005B7754 /* TaskViewModel.swift in Sources */,
 				32487B7928910D8B001C479D /* TabBarView.swift in Sources */,
 				3261F7AC28923B22005B7754 /* TaskListItems.swift in Sources */,
+				3261F7AF28924BED005B7754 /* NewTaskSheetView.swift in Sources */,
 				3261F7732891F438005B7754 /* TaskModel.swift in Sources */,
 				3261F7A928922BAB005B7754 /* HistoryScreenView.swift in Sources */,
 			);
@@ -279,6 +284,7 @@
 			files = (
 				325598E42887C9A100089BE9 /* focused.xcdatamodeld in Sources */,
 				3261F7AA28922BAB005B7754 /* HistoryScreenView.swift in Sources */,
+				3261F7B028924BED005B7754 /* NewTaskSheetView.swift in Sources */,
 				325598EA2887C9A100089BE9 /* Persistence.swift in Sources */,
 				3261F7AD28923B22005B7754 /* TaskListItems.swift in Sources */,
 				3261F77C28920649005B7754 /* WelcomeScreen.swift in Sources */,
