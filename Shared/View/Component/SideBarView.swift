@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SideBarView: View {
-    @ObservedObject var taskVM: TaskViewModel
     var body: some View {
         NavigationView {
             List{
@@ -16,7 +15,7 @@ struct SideBarView: View {
                     .fontWeight(.light)
                     .foregroundColor(.primary.opacity(0.7))
                 NavigationLink{
-                    TodayScreenView(taskVM: taskVM)
+                    TodayScreenView()
                     
                         .navigationTitle("Today")
                 } label: {
@@ -24,7 +23,7 @@ struct SideBarView: View {
                 }
 
                 NavigationLink {
-                    HistoryScreenView(taskVM: taskVM)
+                    HistoryScreenView()
                     
                         .navigationTitle("Histories")
                 } label: {
@@ -35,11 +34,12 @@ struct SideBarView: View {
 
             .navigationTitle("Focused Apps")
         }
+        .environmentObject(TaskViewModel())
     }
 }
 
 struct SideBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SideBarView(taskVM: TaskViewModel())
+        SideBarView()
     }
 }

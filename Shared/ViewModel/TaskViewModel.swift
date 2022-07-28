@@ -12,23 +12,24 @@ class TaskViewModel: ObservableObject {
     @Published var histories: [TaskModel] = []
     
     init() {
-        let dataTask: [String] = [
-            "Sketch Phone App LoFi",
-            "Design Mac App",
-            "Complating Copywriting",
-            "Uploading Assets",
-            "Gether color palet inspiration"
-        ]
-
-        dataTask.forEach { title in
-            self.tasks.append(TaskModel(id: title, title: title))
-        }
-        
-        self.tasks.forEach { task in
-            if task.elapsedTime != nil {
-                self.histories.append(task)
-            }
+        self.tasks.append(TaskModel(title: "Testing"))
+    }
+    
+    func addNewTask(title: String) {
+        self.tasks.append(TaskModel(title: title))
+    }
+    
+    func startPomodoro(task: TaskModel) {
+        if let i = tasks.firstIndex(of: task) {
+            tasks[i].pomodoroCount = tasks[i].pomodoroCount + 1
         }
     }
     
+    func markAsDone(task: TaskModel) {
+        if var taskSelected = tasks.first(where: { $0.id == task.id }) {
+            taskSelected.isDone = true;
+            self.histories.append(taskSelected)
+            self.tasks.removeAll(where: { $0.id == task.id })
+        }
+    }
 }

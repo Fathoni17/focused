@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HistoryScreenView: View {
-    @ObservedObject var taskVM: TaskViewModel
+    @EnvironmentObject var taskVM: TaskViewModel
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -21,14 +21,14 @@ struct HistoryScreenView: View {
             List {
                 #if os(iOS)
                 Section {
-                    ForEach(taskVM.tasks) {
-                        TaskListItems(title: $0.title, count: 2, isDone: true)
+                    ForEach(taskVM.histories) {
+                        TaskListItems(task: $0)
                     }
                 }
                 #elseif os(macOS)
                 Section {
-                    ForEach(taskVM.tasks) {
-                        TaskListItems(title: $0.title, count: 2, isDone: true)
+                    ForEach(taskVM.histories) {
+                        TaskListItems(task: $0)
                     }
                 } header: {
                     Text("You have done well!  👊🏻")
@@ -49,6 +49,6 @@ struct HistoryScreenView: View {
 
 struct HistoryScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryScreenView(taskVM: TaskViewModel())
+        HistoryScreenView().environmentObject(TaskViewModel())
     }
 }

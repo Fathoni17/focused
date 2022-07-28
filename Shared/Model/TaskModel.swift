@@ -10,7 +10,12 @@ import Foundation
 struct TaskModel: Hashable, Identifiable {
     var id: String
     var title: String
-    var elapsedTime: UInt?
-    var pomodoroCount: UInt?
-    var isDone: Bool?
+    var elapsedTime: Int?
+    var pomodoroCount: Int = 0
+    var isDone: Bool = false
+    
+    init(title: String) {
+        self.id = UUID().uuidString
+        self.title = title
+    }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TodayScreenView: View {
-    @ObservedObject var taskVM: TaskViewModel
+    @EnvironmentObject var taskVM: TaskViewModel
     @State var isAddSheetOpen: Bool = false
     
     var body: some View {
@@ -19,7 +19,7 @@ struct TodayScreenView: View {
             List {
                 Section {
                     ForEach(taskVM.tasks) {
-                        TaskListItems(title: $0.title, count: $0.pomodoroCount)
+                        TaskListItems(task: $0)
                     }
                 } header: {
                     HStack {
@@ -60,6 +60,6 @@ struct TodayScreenView: View {
 
 struct TodayScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        TodayScreenView(taskVM: TaskViewModel())
+        TodayScreenView().environmentObject(TaskViewModel())
     }
 }

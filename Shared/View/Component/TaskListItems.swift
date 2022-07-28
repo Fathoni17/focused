@@ -8,26 +8,28 @@
 import SwiftUI
 
 struct TaskListItems: View {
-    var title: String
-    var count: UInt?
-    var isDone: Bool = false
+    @EnvironmentObject var taskVM: TaskViewModel
+    var task: TaskModel
     
     var body: some View {
         HStack {
-            Text(title)
+            Text(task.title)
             Spacer()
-            if count != nil {
-                Text("\(count!)x  🍅")
+            if task.pomodoroCount > 0 {
+                Text("\(task.pomodoroCount)x  🍅")
             }
         }
         #if os(macOS)
         .padding(.vertical, 3)
         #endif
+        .background()
         .onTapGesture {
-            print("\(title) clicked")
-            if !isDone {
-                // TODO: implement start pomodoro
-                print("Do you want to start this task?")
+            if !task.isDone {
+                if task.pomodoroCount < 4 {
+                    taskVM.startPomodoro(task: task)
+                } else {
+                    taskVM.markAsDone(task: task)
+                }
             }
         }
     }
@@ -35,6 +37,6 @@ struct TaskListItems: View {
 
 struct TaskListItems_Previews: PreviewProvider {
     static var previews: some View {
-        TaskListItems(title: "Task title for testing", count: 2)
+        TaskListItems(task: TaskModel(title: "Testing"))
     }
 }

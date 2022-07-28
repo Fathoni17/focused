@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct TabBarView: View {
-    @ObservedObject var taskVM: TaskViewModel
     var body: some View {
         TabView{
             NavigationView {
-                TodayScreenView(taskVM: taskVM)
+                TodayScreenView()
             }
                 .tabItem {
                     VStack{
@@ -21,7 +20,7 @@ struct TabBarView: View {
                     }
                 }
             NavigationView {
-                HistoryScreenView(taskVM: taskVM)
+                HistoryScreenView()
             }
                 .tabItem {
                     VStack{
@@ -30,11 +29,12 @@ struct TabBarView: View {
                     }
                 }
         }
+        .environmentObject(TaskViewModel())
     }
 }
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView(taskVM: TaskViewModel())
+        TabBarView()
     }
 }

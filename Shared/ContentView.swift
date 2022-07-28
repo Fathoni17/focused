@@ -11,14 +11,12 @@ import CoreData
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    @StateObject var taskVM = TaskViewModel()
-    
     var body: some View {
     #if os(iOS)
-        TabBarView(taskVM: taskVM)
+        TabBarView()
     #endif
     #if os(macOS)
-        SideBarView(taskVM: taskVM)
+        SideBarView()
     #endif
     #if os(watchOS)
         Text("Watch")

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct NewTaskSheetView: View {
     @Binding var showModal: Bool
-
+    @EnvironmentObject var taskVM: TaskViewModel
     @Environment(\.presentationMode) private var presentationMode
 
     @State var newTaskTitle: String = ""
@@ -58,7 +58,9 @@ struct NewTaskSheetView: View {
     }
     func addButton() -> some View {
         Button("Add") {
+            taskVM.addNewTask(title: self.newTaskTitle)
             self.showModal.toggle()
+            self.presentationMode.wrappedValue.dismiss()
         }
     }
 }
