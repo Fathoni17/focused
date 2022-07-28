@@ -26,9 +26,9 @@ struct SideBarView: View {
                 NavigationLink {
                     HistoryScreenView(taskVM: taskVM)
                     
-                        .navigationTitle("History")
+                        .navigationTitle("Histories")
                 } label: {
-                    Label("History", systemImage: "archivebox")
+                    Label("Histories", systemImage: "archivebox")
                 }
             }
             WelcomeScreen()

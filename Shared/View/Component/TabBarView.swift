@@ -26,7 +26,7 @@ struct TabBarView: View {
                 .tabItem {
                     VStack{
                         Image(systemName: "archivebox.fill")
-                        Text("History")
+                        Text("Histories")
                     }
                 }
         }

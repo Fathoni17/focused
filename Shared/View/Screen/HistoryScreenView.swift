@@ -14,7 +14,7 @@ struct HistoryScreenView: View {
         VStack(alignment: .leading, spacing: 0) {
             #if os(macOS)
             Text("Histories")
-                .font(.title2)
+                .font(.title)
                 .padding(.horizontal)
                 .padding(.top, 30)
             #endif
@@ -22,19 +22,13 @@ struct HistoryScreenView: View {
                 #if os(iOS)
                 Section {
                     ForEach(taskVM.tasks) {
-                        Text($0.title)
-                        #if os(macOS)
-                            .padding(.vertical, 2)
-                        #endif
+                        TaskListItems(title: $0.title, count: 2, isDone: true)
                     }
                 }
                 #elseif os(macOS)
                 Section {
                     ForEach(taskVM.tasks) {
-                        Text($0.title)
-                        #if os(macOS)
-                            .padding(.vertical, 2)
-                        #endif
+                        TaskListItems(title: $0.title, count: 2, isDone: true)
                     }
                 } header: {
                     Text("You have done well!  👊🏻")

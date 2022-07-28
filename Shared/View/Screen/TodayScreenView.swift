@@ -18,11 +18,7 @@ struct TodayScreenView: View {
             List {
                 Section {
                     ForEach(taskVM.tasks) {
-                        // TODO: Create list item for TaskModel
-                        Text($0.title)
-                        #if os(macOS)
-                            .padding(.vertical, 2)
-                        #endif
+                        TaskListItems(title: $0.title, count: $0.pomodoroCount)
                     }
                 } header: {
                     Text("Today's Tasks")

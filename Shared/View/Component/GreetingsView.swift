@@ -10,9 +10,10 @@ import SwiftUI
 struct GreetingsView: View {
     var body: some View {
         #if os(iOS)
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
             // TODO: Change to dynamic Name input
             Greatings(name: "Muhammad Fathoni")
+                .padding(.bottom, 8)
             Divider()
             HStack {
                 Text("Your\nFocus Level")
