@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct TodayScreenView: View {
-    @ObservedObject var taskVM = TaskViewModel()
+    @ObservedObject var taskVM: TaskViewModel
     
     var body: some View {
         VStack {
             GreetingsView()
+                .padding(.top, 20)
             
             List {
                 Section {
@@ -20,7 +21,7 @@ struct TodayScreenView: View {
                         // TODO: Create list item for TaskModel
                         Text($0.title)
                         #if os(macOS)
-                            .padding(.vertical, 5)
+                            .padding(.vertical, 2)
                         #endif
                     }
                 } header: {
@@ -28,15 +29,15 @@ struct TodayScreenView: View {
                 }
             }
                 .listStyle(.inset)
+                #if os(iOS)
+                .navigationBarHidden(true)
+                #endif
         }
-        #if os(iOS)
-        .navigationBarHidden(true)
-        #endif
     }
 }
 
 struct TodayScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        TodayScreenView()
+        TodayScreenView(taskVM: TaskViewModel())
     }
 }

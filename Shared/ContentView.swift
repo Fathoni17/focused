@@ -11,20 +11,18 @@ import CoreData
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
+    @StateObject var taskVM = TaskViewModel()
+    
     var body: some View {
-        NavigationView {
-        #if os(iOS)
-            TabBarView()
-        #endif
-        #if os(macOS)
-            SideBarView()
-            WelcomeScreen()
-        #endif
-        #if os(watchOS)
-            Text("Watch")
-        #endif
-        }
-            .navigationTitle("Focused Apps")
+    #if os(iOS)
+        TabBarView(taskVM: taskVM)
+    #endif
+    #if os(macOS)
+        SideBarView(taskVM: taskVM)
+    #endif
+    #if os(watchOS)
+        Text("Watch")
+    #endif
     }
 }
 
