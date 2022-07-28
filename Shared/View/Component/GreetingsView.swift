@@ -48,7 +48,7 @@ struct GreetingsView: View {
         VStack(alignment: .leading){
             Text("Welcome back,")
             Text(name)
-                .font(.title)
+                .font(.largeTitle)
                 .fontWeight(.semibold)
         }
     }

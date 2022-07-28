@@ -9,11 +9,13 @@ import SwiftUI
 
 struct TodayScreenView: View {
     @ObservedObject var taskVM: TaskViewModel
+    @State var isAddSheetOpen: Bool = false
+    @State var newTaskTitle: String = ""
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             GreetingsView()
-                .padding(.top, 20)
+                .padding(.top, 12)
             
             List {
                 Section {
@@ -21,13 +23,25 @@ struct TodayScreenView: View {
                         TaskListItems(title: $0.title, count: $0.pomodoroCount)
                     }
                 } header: {
-                    Text("Today's Tasks")
+                    HStack {
+                        Text("Today's Tasks")
+                        Spacer()
+                        //EditButton() // TODO: will implemented letter
+                        Button {
+                            newTaskTitle = ""
+                            isAddSheetOpen = true
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                        .padding(.all, 4)
+                    }
                 }
             }
                 .listStyle(.inset)
                 #if os(iOS)
                 .navigationBarHidden(true)
                 #endif
+            
         }
     }
 }
