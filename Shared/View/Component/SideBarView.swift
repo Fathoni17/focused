@@ -10,7 +10,10 @@ import SwiftUI
 struct SideBarView: View {
     var body: some View {
         List{
-            NavigationLink {
+            Text("Tasks")
+                .fontWeight(.light)
+                .foregroundColor(.primary.opacity(0.7))
+            NavigationLink{
                 TodayScreenView()
                 
                     .navigationTitle("Today")

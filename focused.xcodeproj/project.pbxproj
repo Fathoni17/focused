@@ -27,6 +27,7 @@
 		3261F7772891F945005B7754 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7752891F525005B7754 /* TaskViewModel.swift */; };
 		3261F7792891FE4B005B7754 /* GreetingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7782891FE4B005B7754 /* GreetingsView.swift */; };
 		3261F77A2891FE4B005B7754 /* GreetingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F7782891FE4B005B7754 /* GreetingsView.swift */; };
+		3261F77C28920649005B7754 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261F77B28920649005B7754 /* WelcomeScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		3261F7722891F438005B7754 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		3261F7752891F525005B7754 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		3261F7782891FE4B005B7754 /* GreetingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingsView.swift; sourceTree = "<group>"; };
+		3261F77B28920649005B7754 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				32487B7828910D8B001C479D /* TabBarView.swift */,
 				3261F73E28918684005B7754 /* SideBarView.swift */,
 				3261F7782891FE4B005B7754 /* GreetingsView.swift */,
+				3261F77B28920649005B7754 /* WelcomeScreen.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			files = (
 				325598E42887C9A100089BE9 /* focused.xcdatamodeld in Sources */,
 				325598EA2887C9A100089BE9 /* Persistence.swift in Sources */,
+				3261F77C28920649005B7754 /* WelcomeScreen.swift in Sources */,
 				3261F7712891EF15005B7754 /* TodayScreenView.swift in Sources */,
 				325598E62887C9A100089BE9 /* focusedApp.swift in Sources */,
 				3261F74028918766005B7754 /* SideBarView.swift in Sources */,

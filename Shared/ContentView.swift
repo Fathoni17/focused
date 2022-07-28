@@ -18,6 +18,7 @@ struct ContentView: View {
         #endif
         #if os(macOS)
             SideBarView()
+            WelcomeScreen()
         #endif
         #if os(watchOS)
             Text("Watch")
