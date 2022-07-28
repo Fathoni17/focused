@@ -11,6 +11,9 @@ struct TaskListItems: View {
     @EnvironmentObject var taskVM: TaskViewModel
     var task: TaskModel
     
+    @State var isStartConfirm = false
+    @State var isDoneConfirm = false
+    
     var body: some View {
         HStack {
             Text(task.title)
@@ -25,13 +28,37 @@ struct TaskListItems: View {
         .background()
         .onTapGesture {
             if !task.isDone {
-                if task.pomodoroCount < 4 {
-                    taskVM.startPomodoro(task: task)
-                } else {
-                    taskVM.markAsDone(task: task)
-                }
+                isStartConfirm = true
             }
         }
+        .onLongPressGesture(perform: {
+            if !task.isDone && task.pomodoroCount > 0 {
+                isDoneConfirm = true
+            }
+        })
+        
+        // MARK: - Confirmation/ActionSheet
+        .confirmationDialog("Has \(task.title) been completed?", isPresented: $isDoneConfirm, actions: {
+            Button("Yes", role: .destructive) {
+                taskVM.markAsDone(task: task)
+            }
+            Button("No yet", role: .cancel) {
+                isDoneConfirm = false
+            }
+        }, message: {
+            Text("The completed task will be moved to history. Have you finished it?")
+        })
+        .confirmationDialog("Start Pomodoro", isPresented: $isStartConfirm) {
+            Button("Start") {
+                taskVM.startPomodoro(task: task)
+            }
+            Button("Cancel", role: .cancel) {
+                isStartConfirm = false
+            }
+        } message: {
+            Text("Are you sure want to start focusing on \(task.title)?")
+        }
+
     }
 }
 
