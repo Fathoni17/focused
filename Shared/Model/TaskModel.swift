@@ -10,8 +10,11 @@ import Foundation
 struct TaskModel: Hashable, Identifiable {
     var id: String
     var title: String
-    var elapsedTime: Int?
     var pomodoroCount: Int = 0
+    var lastPomodoroStartedAt: Date?
+    var isResting: Bool = false
+    var isStillEfective: Bool = true
+    var elapsedTime: Int?
     var isDone: Bool = false
     
     init(title: String) {
