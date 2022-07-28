@@ -42,17 +42,21 @@ class TaskViewModel: ObservableObject {
     }
     
     func startPomodoro(task: TaskModel) {
-        if var taskSelected = tasks.first(where: { $0.id == task.id }) {            
-            taskSelected.pomodoroCount = taskSelected.pomodoroCount + 1
-            taskSelected.lastPomodoroStartedAt = Date()
-            taskSelected.isResting = false
+        if let i = tasks.firstIndex(of: task) {
+            print("Pomodoro started for \(tasks[i].title) - \(tasks[i].pomodoroCount)")
+            // MARK: -
+            tasks[i].pomodoroCount = tasks[i].pomodoroCount + 1
+            // MARK: _-
+
+            tasks[i].lastPomodoroStartedAt = Date()
+            tasks[i].isResting = false
         }
     }
     
     func continueForResting(task: TaskModel) {
-        if var taskSelected = tasks.first(where: { $0.id == task.id }) {
-            taskSelected.elapsedTime = (taskSelected.elapsedTime ?? 0) + 25
-            taskSelected.isResting = true
+        if let i = tasks.firstIndex(of: task) {
+            tasks[i].elapsedTime = (tasks[i].elapsedTime ?? 0) + 25
+            tasks[i].isResting = true
         }
     }
     
