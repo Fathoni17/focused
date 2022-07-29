@@ -20,7 +20,7 @@ class TaskViewModel: ObservableObject {
         // TODO: Calculation start here
 
         // MARK: - Mocking data for display
-        self.tasks.append(TaskModel(title: "Testing"))
+        self.tasks.append(TaskModel(title: "Testing pomodoro timer"))
     }
     
     func addNewTask(title: String) {

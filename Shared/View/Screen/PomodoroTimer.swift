@@ -47,7 +47,7 @@ struct PomodoroTimer: View {
                     .foregroundColor(isResting ? Color("onTertiaryContainer") : Color("onSecondaryContainer"))
                     .padding()
                     .padding(.horizontal, 16)
-                    .frame(minWidth: 120)
+                    .frame(minWidth: 200)
                     .background(isResting ? Color("tertiaryContainer") : Color("secondaryContainer"))
                     .cornerRadius(40)
                 }
@@ -64,7 +64,7 @@ struct PomodoroTimer: View {
                 .foregroundColor(isResting ? Color("onTertiaryContainer") : Color("onSecondaryContainer"))
                 .padding()
                 .padding(.horizontal, 16)
-                .frame(minWidth: 120)
+                .frame(minWidth: 200)
                 .background(isResting ? Color("tertiaryContainer") : Color("secondaryContainer"))
                 .cornerRadius(40)
             }
