@@ -29,6 +29,7 @@ struct TabBarView: View {
                     }
                 }
         }
+        .accentColor(Color("primary"))
         .environmentObject(TaskViewModel())
     }
 }

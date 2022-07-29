@@ -63,13 +63,14 @@ struct GreetingsView: View {
             Text("\(level, specifier: "%.1f")h")
                 .font(.title2)
                 .lineLimit(1)
+                .foregroundColor(Color("onSecondaryContainer"))
             Text("🔥")
                 .font(.custom("FireIcon", fixedSize: 32))
         }
         .padding(.vertical, 10)
         .padding(.horizontal, 20)
-        .background(.red.opacity(0.4))
-        .cornerRadius(8)
+        .background(Color("secondaryContainer"))
+        .cornerRadius(16)
     }
 }
 

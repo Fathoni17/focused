@@ -63,7 +63,10 @@ struct TaskListItems: View {
 
         #if os(iOS)
         .fullScreenCover(isPresented: $goToPomodoro) {
-            PomodoroTimer(task: task)
+            PomodoroTimer(
+                task: task
+//              , countdownMinutes: 25
+            )
         }
         #endif
     }

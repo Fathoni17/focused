@@ -34,6 +34,7 @@ struct SideBarView: View {
 
             .navigationTitle("Focused Apps")
         }
+        .accentColor(Color("primary"))
         .environmentObject(TaskViewModel())
     }
 }

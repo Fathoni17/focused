@@ -12,9 +12,13 @@ let timer = Timer
     .autoconnect()
 
 struct CountdownCircle: View {
-    @State var counter: Int = 0
+    @State var task: TaskModel
+    @Binding var isResting: Bool
+    var onDone: () -> Void
+    @Binding var counter: Int
     var countTo: Int = 25*60 //4 minutes 120 - 2minutes
-    
+
+    @EnvironmentObject var taskVM: TaskViewModel
     var body: some View {
         VStack{
             ZStack{
@@ -22,7 +26,7 @@ struct CountdownCircle: View {
                     .fill(Color.clear)
                     .frame(width: 250, height: 250)
                     .overlay(
-                        Circle().stroke(Color.green, lineWidth: 20)
+                        Circle().stroke(isResting ? Color("tertiaryContainer") : Color("inversePrimary"), lineWidth: 20)
                     )
                 
                 Circle()
@@ -38,16 +42,25 @@ struct CountdownCircle: View {
                                 )
                             )
                             .foregroundColor(
-                                (completed() ? Color.orange : Color.red)
+                                (isResting ? Color("onTertiaryContainer") : Color("primary"))
                             ).animation(.easeInOut(duration: 0.2), value: counter)
                     )
                     .rotationEffect(.degrees(-90))
 
-                Clock(counter: counter, countTo: countTo)
+                Clock(counter: counter, countTo: countTo, resting: isResting)
             }
         }.onReceive(timer) { time in
             if (self.counter < self.countTo) {
                 self.counter += 1
+            }
+            if self.counter == self.countTo {
+                if !isResting {
+                    taskVM.continueForResting(task: task)
+                    isResting = true
+                    counter = 0
+                } else {
+                    onDone()
+                }
             }
         }
     }
@@ -64,12 +77,17 @@ struct CountdownCircle: View {
 struct Clock: View {
     var counter: Int
     var countTo: Int
+    var resting: Bool
     
     var body: some View {
         VStack {
             Text(counterToMinutes())
                 .font(.system(size: 60))
                 .fontWeight(.black)
+                .foregroundColor(resting
+                    ? Color("onTertiaryContainer")
+                    : Color("primary")
+                )
         }
     }
     
@@ -83,7 +101,8 @@ struct Clock: View {
 }
 
 struct CountdownCircle_Previews: PreviewProvider {
+    @State static var resting: Bool = false
     static var previews: some View {
-        CountdownCircle()
+        CountdownCircle(task: TaskModel(title: "Testing"), isResting: $resting, onDone: {}, counter: .constant(0) )
     }
 }

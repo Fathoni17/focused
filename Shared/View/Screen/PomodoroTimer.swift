@@ -10,30 +10,64 @@ import SwiftUI
 struct PomodoroTimer: View {
     @EnvironmentObject var taskVM: TaskViewModel
     @State var task: TaskModel
-    @State var countdownMinutes: Int = 2
+    @State var countdownMinutes: Int = 1
+    @State var isResting: Bool = false
+    @State var sessionEnd: Bool = false
     @State var counter: Int = 0
+
+    @Environment(\.presentationMode) private var presentationMode
 
     var body: some View {
         VStack(spacing: 50) {
-            if task.isResting {
+            if isResting {
                 Text("Take a break 👊🏻")
                     .font(.title2)
                     .fontWeight(.semibold)
+                    .foregroundColor(Color("onTertiaryContainer"))
             } else {
                 Text("On Focus! 🔥")
                     .font(.title2)
                     .fontWeight(.semibold)
+                    .foregroundColor(Color("primary"))
             }
-            CountdownCircle(counter: 0, countTo: (task.isResting ? 5 : countdownMinutes) * 60)
-            Text(task.title)
+            CountdownCircle(task: task, isResting: $isResting, onDone: {
+                sessionEnd = true
+            }, counter: $counter, countTo: (isResting ? 15 : countdownMinutes * 60) )
+            Text(!isResting ? task.title : "Break time 🎉")
                 .font(.title)
-            Button("Mark as done") {
-                counter = counter + 60
+                .foregroundColor(isResting ? Color("onTertiaryContainer") : Color("primary"))
+            VStack {
+                if sessionEnd {
+                    Button("Continue") {
+                        isResting = false
+                        sessionEnd = false
+                        counter = 0
+                        taskVM.startPomodoro(task: task)
+                    }
+                    .foregroundColor(isResting ? Color("onTertiaryContainer") : Color("onSecondaryContainer"))
+                    .padding()
+                    .padding(.horizontal, 16)
+                    .frame(minWidth: 120)
+                    .background(isResting ? Color("tertiaryContainer") : Color("secondaryContainer"))
+                    .cornerRadius(40)
+                }
+
+                Button("Mark as done") {
+                    if isResting {
+                        taskVM.markAsDone(task: task)
+                        isResting = false
+                        self.presentationMode.wrappedValue.dismiss()
+                    } else {
+                        isResting = true
+                    }
+                }
+                .foregroundColor(isResting ? Color("onTertiaryContainer") : Color("onSecondaryContainer"))
+                .padding()
+                .padding(.horizontal, 16)
+                .frame(minWidth: 120)
+                .background(isResting ? Color("tertiaryContainer") : Color("secondaryContainer"))
+                .cornerRadius(40)
             }
-            .padding()
-            .padding(.horizontal, 20)
-            .background(.red.opacity(0.3))
-            .cornerRadius(16)
         }
     }
 }
