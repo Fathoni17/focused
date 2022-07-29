@@ -13,6 +13,7 @@ struct TaskListItems: View {
     
     @State var isStartConfirm = false
     @State var isDoneConfirm = false
+    @State var goToPomodoro = false
     
     var body: some View {
         HStack {
@@ -51,6 +52,7 @@ struct TaskListItems: View {
         .confirmationDialog("Start Pomodoro", isPresented: $isStartConfirm) {
             Button("Start") {
                 taskVM.startPomodoro(task: task)
+                goToPomodoro =  true
             }
             Button("Cancel", role: .cancel) {
                 isStartConfirm = false
@@ -59,6 +61,11 @@ struct TaskListItems: View {
             Text("Are you sure want to start focusing on \(task.title)?")
         }
 
+        #if os(iOS)
+        .fullScreenCover(isPresented: $goToPomodoro) {
+            PomodoroTimer(task: task)
+        }
+        #endif
     }
 }
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3218373628935B5900794DFB /* CountdownCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218373528935B5900794DFB /* CountdownCircle.swift */; };
+		3218373728935B5900794DFB /* CountdownCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218373528935B5900794DFB /* CountdownCircle.swift */; };
+		3218373A28935ED500794DFB /* PomodoroTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218373928935ED500794DFB /* PomodoroTimer.swift */; };
 		32487B7928910D8B001C479D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32487B7828910D8B001C479D /* TabBarView.swift */; };
 		325598E32887C9A100089BE9 /* focused.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 325598D02887C9A000089BE9 /* focused.xcdatamodeld */; };
 		325598E42887C9A100089BE9 /* focused.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 325598D02887C9A000089BE9 /* focused.xcdatamodeld */; };
@@ -37,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3218373528935B5900794DFB /* CountdownCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownCircle.swift; sourceTree = "<group>"; };
+		3218373928935ED500794DFB /* PomodoroTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTimer.swift; sourceTree = "<group>"; };
 		32487B7828910D8B001C479D /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		325598D12887C9A000089BE9 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		325598D22887C9A000089BE9 /* focusedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = focusedApp.swift; sourceTree = "<group>"; };
@@ -84,6 +89,7 @@
 				3261F7782891FE4B005B7754 /* GreetingsView.swift */,
 				3261F77B28920649005B7754 /* WelcomeScreen.swift */,
 				3261F7AB28923B22005B7754 /* TaskListItems.swift */,
+				3218373528935B5900794DFB /* CountdownCircle.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -161,6 +167,7 @@
 				3261F76F2891EEEC005B7754 /* TodayScreenView.swift */,
 				3261F7A828922BAB005B7754 /* HistoryScreenView.swift */,
 				3261F7AE28924BED005B7754 /* NewTaskSheetView.swift */,
+				3218373928935ED500794DFB /* PomodoroTimer.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -263,7 +270,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3218373628935B5900794DFB /* CountdownCircle.swift in Sources */,
 				325598E32887C9A100089BE9 /* focused.xcdatamodeld in Sources */,
+				3218373A28935ED500794DFB /* PomodoroTimer.swift in Sources */,
 				325598E92887C9A100089BE9 /* Persistence.swift in Sources */,
 				3261F7702891EEEC005B7754 /* TodayScreenView.swift in Sources */,
 				325598E52887C9A100089BE9 /* focusedApp.swift in Sources */,
@@ -283,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				325598E42887C9A100089BE9 /* focused.xcdatamodeld in Sources */,
+				3218373728935B5900794DFB /* CountdownCircle.swift in Sources */,
 				3261F7AA28922BAB005B7754 /* HistoryScreenView.swift in Sources */,
 				3261F7B028924BED005B7754 /* NewTaskSheetView.swift in Sources */,
 				325598EA2887C9A100089BE9 /* Persistence.swift in Sources */,
